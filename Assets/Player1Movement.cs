@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Player1Movement : MonoBehaviour
 {
     // for the speed of the character
     [SerializeField] private float speed;
@@ -26,9 +26,9 @@ public class PlayerMovement : MonoBehaviour
         // animation for player
         /*
         if (playerInput.sqrMagnitude > 0)
-            animator.Play("playerWalk");
+            animator.Play("player1Walk");
         else
-            animator.Play("playerStand");
+            animator.Play("player1Stand");
         */
 
         // moves player, normalized to fix speed when moving diagonally
