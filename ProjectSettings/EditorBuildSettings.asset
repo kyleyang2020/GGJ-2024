@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MiniGame.unity
     guid: cd6b7c641e16e974096e577e4be0e09c
   - enabled: 1
-    path: Assets/Scenes/PaperWrestling2.unity
+    path: Assets/Scenes/P2/PaperWrestling2.unity
     guid: 653e44713ef826a4295fafd9fc970928
   m_configObjects: {}
