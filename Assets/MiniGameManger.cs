@@ -16,4 +16,9 @@ public class MiniGameManger : MonoBehaviour
             SceneManager.UnloadSceneAsync(2);
         }
     }
+
+    public void UnloadMiniGame(string sceneName)
+    {
+        SceneManager.UnloadSceneAsync(sceneName);
+    }
 }
