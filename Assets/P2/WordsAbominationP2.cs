@@ -23,6 +23,8 @@ public class WordsAbominationP2 : MonoBehaviour
     // int of the correct answer
     int randomButtonText;
 
+    int buttonCounter = 0;
+
     private void Start()
     {
         // show the word with missing letter
@@ -36,19 +38,22 @@ public class WordsAbominationP2 : MonoBehaviour
         for(int i = 0; i < buttonTextList.Count; i++)
         {
             // skips over the actual answer
-            if (i == randomButtonText)
-                i++;
             // randomly chooses a lower case letter to fill in for wrong answers
             // DID NOT IMPLEMENT EDGE CASES where correct answers can come up
-            else
+            if (!(i == randomButtonText))
                 buttonTextList[i].text = Convert.ToChar(UnityEngine.Random.Range(97, 122)).ToString();
         }
     }
 
     private void Update()
     {
-        // NEED TO IMPLEMENT BUTTON CLICK ACTIONS
-        Button correctAnswer = buttonList[randomButtonText];
+        if (Input.GetKeyDown(KeyCode.Return) && buttonCounter == randomButtonText)
+            // answer is correct
+            Debug.Log("is correct");
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && buttonCounter > 0)
+            buttonCounter--;
+        else if(Input.GetKeyDown(KeyCode.RightArrow) && buttonCounter < 4)
+            buttonCounter++;
     }
 
     char[] GetRandomWordLetters(List<string> words)
@@ -69,4 +74,16 @@ public class WordsAbominationP2 : MonoBehaviour
 
         return chars;
     }
+
+    /*
+    public void CheckAnswer()
+    {
+        // always correct
+        //if (this.buttonTextList[randomButtonText].text == letter.ToString())
+        if (buttonTextList[randomButtonText].text == letter.ToString());
+            Debug.Log("correct");
+        else
+            Debug.Log("false");
+    }
+    */
 }
