@@ -14,13 +14,9 @@ public class MiniGameManger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (this.tag == "FAX" && collision.tag == "Player2")
-        {
-            item.SetActive(false);
-        }
         if (this.tag == "BOM" && collision.tag == "Player1" || collision.tag == "Player2")
         {
-            item.SetActive(false);
+            //item.SetActive(false);
         }
         if (this.tag == "MATH" && collision.tag == "Player1" || collision.tag == "Player2")
         {
