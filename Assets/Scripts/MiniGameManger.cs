@@ -5,40 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class MiniGameManger : MonoBehaviour
 {
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            SceneManager.LoadScene(2, LoadSceneMode.Additive);
-        }
-        if(Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            SceneManager.UnloadSceneAsync(2);
-        }
-    }
+    public GameObject item;
 
     public void UnloadMiniGame(string sceneName)
     {
         SceneManager.UnloadSceneAsync(sceneName);
     }
 
-    public void StartDDR()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
-
-    public void StartFAX()
-    {
-
-    }
-
-    public void StartBOM()
-    {
-
-    }
-
-    public void StartMATH()
-    {
-
+        if (this.tag == "FAX" && collision.tag == "Player2")
+        {
+            item.SetActive(false);
+        }
+        if (this.tag == "BOM" && collision.tag == "Player1" || collision.tag == "Player2")
+        {
+            item.SetActive(false);
+        }
+        if (this.tag == "MATH" && collision.tag == "Player1" || collision.tag == "Player2")
+        {
+            item.SetActive(false);
+        }
     }
 }
+

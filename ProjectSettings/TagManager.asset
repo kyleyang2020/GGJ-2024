@@ -53,3 +53,6 @@ TagManager:
   - name: Walls
     uniqueID: 725122097
     locked: 0
+  - name: Sprites
+    uniqueID: 1074847451
+    locked: 0

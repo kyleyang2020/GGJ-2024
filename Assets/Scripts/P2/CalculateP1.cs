@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CalculateP2 : MonoBehaviour
+public class CalculateP1 : MonoBehaviour
 {
     // list of 3 math things, +, -, x
     List<char> opList = new List<char> { '+', '-', 'x' };
@@ -64,14 +64,14 @@ public class CalculateP2 : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return) && buttonCounter == randomButtonText)
+        if (Input.GetKeyDown(KeyCode.Space) && buttonCounter == randomButtonText)
         {
             manager.UnloadMiniGame(sceneName);
             Debug.Log("is correct");
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && buttonCounter > 0)
+        if (Input.GetKeyDown(KeyCode.A) && buttonCounter > 0)
             buttonCounter--;
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && buttonCounter < 4)
+        else if (Input.GetKeyDown(KeyCode.D) && buttonCounter < 4)
             buttonCounter++;
     }
 

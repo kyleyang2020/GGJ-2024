@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player1Movement : MonoBehaviour
 {
@@ -35,4 +36,17 @@ public class Player1Movement : MonoBehaviour
         // Time.deltaTime to make movement framerate dependent
         rb.velocity = playerInput.normalized * speed;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "BOM")
+        {
+            speed -= 2;
+        }
+        if (collision.tag == "MATH")
+        {
+            speed += 2;
+        }
+    }
+
 }
