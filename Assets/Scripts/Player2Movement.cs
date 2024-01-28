@@ -42,8 +42,7 @@ public class Player2Movement : MonoBehaviour
     {
         if (collision.tag == "Player1")
         {
-            Debug.Log("tp");
-            transform.position = new Vector3(45, -45, -5);
+            SceneManager.LoadScene("ENDP1");
         }
         if (collision.tag == "FAX")
         {

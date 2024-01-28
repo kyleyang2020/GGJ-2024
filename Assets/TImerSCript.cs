@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TimerScript : MonoBehaviour
 {
-    public float totalTime = 60f; // Set the total time for the timer in seconds
+    public float totalTime = 60; // Set the total time for the timer in seconds
     private float currentTime;
+
+    // TMPro text object
+    public TMPro.TextMeshProUGUI timer;
 
     void Start()
     {
@@ -14,10 +18,11 @@ public class TimerScript : MonoBehaviour
 
     void Update()
     {
+        timer.text = currentTime.ToString();
         // Update the timer
         if (currentTime > 0f)
         {
-            currentTime -= Time.deltaTime;
+            currentTime = currentTime - Time.deltaTime;
             // You can add additional actions or update UI here during the countdown
         }
         else
@@ -30,7 +35,7 @@ public class TimerScript : MonoBehaviour
     void TimerExpiredAction()
     {
         Debug.Log("Timer expired!");
-        // Add your custom action here, for example, load a new scene, restart the level, etc.
+        SceneManager.LoadScene("ENDP2");
     }
 }
 
