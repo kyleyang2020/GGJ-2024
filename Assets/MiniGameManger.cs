@@ -21,4 +21,24 @@ public class MiniGameManger : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(sceneName);
     }
+
+    public void StartDDR()
+    {
+        
+    }
+
+    public void StartFAX()
+    {
+
+    }
+
+    public void StartBOM()
+    {
+
+    }
+
+    public void StartMATH()
+    {
+
+    }
 }
