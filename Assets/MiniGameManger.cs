@@ -13,7 +13,12 @@ public class MiniGameManger : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.LeftShift))
         {
-            SceneManager.UnloadScene(2);
+            SceneManager.UnloadSceneAsync(2);
         }
+    }
+
+    public void UnloadMiniGame(string sceneName)
+    {
+        SceneManager.UnloadSceneAsync(sceneName);
     }
 }
