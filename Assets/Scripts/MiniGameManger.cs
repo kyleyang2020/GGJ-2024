@@ -16,7 +16,7 @@ public class MiniGameManger : MonoBehaviour
     {
         if (this.tag == "BOM" && collision.tag == "Player1" || collision.tag == "Player2")
         {
-            //item.SetActive(false);
+            item.SetActive(false);
         }
         if (this.tag == "MATH" && collision.tag == "Player1" || collision.tag == "Player2")
         {
